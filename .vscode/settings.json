@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/scratch/jjc62351/pipenv/pythonTesting-Q7I1qsVm/bin/python",
+    "python.testing.pytestEnabled": true,
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "editor.formatOnSave": true
+}
