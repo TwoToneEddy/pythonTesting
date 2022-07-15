@@ -6,7 +6,7 @@ import math
 
 class DataHelper:
     def __init__(self, dataFileName: str):
-        """ Class to help with data analysis on mass photometery csv data set
+        """Class to help with data analysis on mass photometery csv data set
 
         Args:
             dataFileName(str): Filename of csv data file. CSV must have header row
@@ -21,7 +21,7 @@ class DataHelper:
         self.medianMass = None
 
     def calc_average_mass(self) -> float:
-        """ Method to calculate average mass
+        """Method to calculate average mass
 
         Returns:
             float: Float value representing the mean mass
@@ -49,8 +49,8 @@ class DataHelper:
     def plot_histogram(self, png_filename: str):
         """Method to plot histogram and save to png file
 
-            Args:
-                png_filename(str): Target filename 
+        Args:
+            png_filename(str): Target filename
         """
         if not self.avgMass:
             self.calc_average_mass()
@@ -58,10 +58,9 @@ class DataHelper:
         if not self.medianMass:
             self.calc_median_mass()
 
-        plt.hist(self.data["masses_kDa"], color="c",bins=20)
+        plt.hist(self.data["masses_kDa"], color="c", bins=20)
         plt.axvline(x=self.avgMass, color="r", linestyle=":")
         plt.axvline(x=self.medianMass, color="g", linestyle=":")
         plt.legend(["Average", "Median"])
         plt.xlabel("masses_kDa")
         plt.savefig(png_filename)
-
