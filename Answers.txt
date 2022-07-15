@@ -1,3 +1,9 @@
+1.1:
+    See dataHelper.py
+
+1.2:
+    Tests written using pytest, see test_DataHelper.py
+
 1.3:
 
     The histogram shows the distribution in the data is not even, the majority of the masses are < 500, The distribution is not normal. 
