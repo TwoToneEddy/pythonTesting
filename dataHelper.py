@@ -21,6 +21,8 @@ class DataHelper:
         self.medianMass = None
 
     def calc_average_mass(self) -> float:
+        """Method to calculate average mass
+        """
         self.avgMass = np.average(self.data["masses_kDa"])
 
         if math.isnan(self.avgMass):
@@ -29,6 +31,8 @@ class DataHelper:
         return self.avgMass
 
     def calc_median_mass(self) -> float:
+        """Method to calculate median mass
+        """
         self.medianMass = np.median(self.data["masses_kDa"])
 
         if math.isnan(self.medianMass):
@@ -37,6 +41,11 @@ class DataHelper:
         return self.medianMass
 
     def plot_histogram(self, png_filename: str):
+        """Method to plot histogram and save to png file
+
+            Args:
+                png_filename(str): Target filename 
+        """
         if not self.avgMass:
             self.calc_average_mass()
 
@@ -50,6 +59,3 @@ class DataHelper:
         plt.xlabel("masses_kDa")
         plt.savefig(png_filename)
 
-
-helperBasic = DataHelper("eventsFitted.csv")
-helperBasic.plot_histogram("image.png")
