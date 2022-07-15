@@ -1,9 +1,9 @@
 from dataHelper import DataHelper
 import pytest
 
-helperBasic = DataHelper("tests/eventsFittedBasicTest.csv")
-helperMissingData = DataHelper("tests/eventsFittedMissingDataTest.csv")
-helperMissingField = DataHelper("tests/eventsFittedMissingFieldTest.csv")
+helperBasic = DataHelper("testData/eventsFittedBasicTest.csv")
+helperMissingData = DataHelper("testData/eventsFittedMissingDataTest.csv")
+helperMissingField = DataHelper("testData/eventsFittedMissingFieldTest.csv")
 
 
 def test_calc_average_mass():
