@@ -6,7 +6,7 @@ import math
 
 class DataHelper:
     def __init__(self, dataFileName: str):
-        """Class to help with data analysis on mass photometery csv data set
+        """ Class to help with data analysis on mass photometery csv data set
 
         Args:
             dataFileName(str): Filename of csv data file. CSV must have header row
@@ -21,7 +21,10 @@ class DataHelper:
         self.medianMass = None
 
     def calc_average_mass(self) -> float:
-        """Method to calculate average mass
+        """ Method to calculate average mass
+
+        Returns:
+            float: Float value representing the mean mass
         """
         self.avgMass = np.average(self.data["masses_kDa"])
 
@@ -32,6 +35,9 @@ class DataHelper:
 
     def calc_median_mass(self) -> float:
         """Method to calculate median mass
+
+        Returns:
+            float: Float value representing the median mass
         """
         self.medianMass = np.median(self.data["masses_kDa"])
 
