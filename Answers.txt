@@ -1,0 +1,35 @@
+1.3:
+
+    The histogram shows the distribution in the data is not even, the majority of the masses are < 500, The distribution is not normal. 
+    There are some cases of much higher masses which raise the mean so in this case the median may be a better average to use.
+
+1.4:
+
+    Changes to the requirements of the class:
+        1:  Auto bin sizing of the histogram depending on the dataset
+        2:  Add methods to add other fields from the data to the histogram to visualise correlation between
+        the mass and other variables, eg, x and y position
+
+
+2:
+
+    Formatting of docstrings in methods appears inconsistent.
+
+    docstrings missing in a few places
+
+    In the fill() method I would advise to use the fill() methods provided by the numpy ndarray class as this is faster than 
+    the array slicing method.
+
+    I would advise against using the dunder method notation for the __getitem__,__setitem and __len__ methods, 
+    espcially considering they are intended to be accessed externally.
+
+    It appears there is some duplicated type hints for the __getitem__ method. The @overload decorated implementations are not necessary 
+    due to the Union types specified in the base implementation, the inverse is also true, you could keep the decorators and remove the Union.
+
+    If used incorrectly the __getitem__ method could return misleading data, ie, data that has been overwriten. For example, the length of the array
+    is 20, the user writes to the first 30 elements causing the first 10 elements of the array to be reused, if the user asks for element 5 they will
+    get actually be getting the value of element 25. This is unavoidable due to the nature of a circular buffer but some assertions in the __getitem__
+    method would be advised.
+
+    The __len__ method doesn't do anything, it should be returning the lengh to data as an int
+
